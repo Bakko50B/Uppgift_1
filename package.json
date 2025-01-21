@@ -1,0 +1,16 @@
+{
+  "name": "uppgift_1",
+  "version": "1.0.0",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "author": "Torbjörn Lundberg",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "sharp": "^0.33.5"
+  }
+}
