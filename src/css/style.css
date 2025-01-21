@@ -1,9 +1,12 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
     margin: 0;
     padding: 0;
 }
 
 body {
+    font-family: "Roboto", serif;
     display: flex;
     background-color: blueviolet;
     flex-direction: column;
@@ -12,9 +15,15 @@ body {
 header {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    max-width: 100%;
     background-color: azure;
-    height: 200px;
+    height: fit-content;
+}
+
+header h1 {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 5rem;
 }
 
 header ul {
@@ -24,9 +33,13 @@ header ul {
     margin: auto auto 0 auto;
 }
 
+header ul li:hover {
+    background-color: rgba(0, 255, 255, 0.813);
+}
+
 header ul li {
     display: inline-block;
-    
+
 }
 
 ul li a {
@@ -38,16 +51,48 @@ ul li a {
 
 main {
     flex-grow: 1;
-    width: 1140px;
+    max-width: 1140px;
     margin: 0 auto;
     background-color: azure;
     height: fit-content;
 }
 
+p {
+    font-size: 1.5rem;
+}
+
 #starttitle {
     text-align: center;
+    font-size: 2.5rem;
 }
 
 .imageholder {
     text-align: center;
+    max-width: 100%;
+}
+
+.imageholder img {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: aqua;
+    }
+
+    header {
+        max-width: 100%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    ul li a {
+        font-size: 1.8rem;
+    }
+
+    main {
+        padding: .5rem;
+    }
 }
