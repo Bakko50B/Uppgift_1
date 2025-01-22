@@ -1,28 +1,93 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Frontend - uppgift1 - OM</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/parcel.js" type="module" ></script>
+    <script src="js/parcel.js" type="module"></script>
 </head>
+
 <body>
     <header>
-    <h1>Frontend - automatisering</h1>
-    <ul>
-        <li><a href="index.html">Start</a></li>
-        <li><a href="pictures.html">Bilder</a></li>
-        <li><a href="about.html">Om</a></li>
+        <h1>Frontend - automatisering</h1>
+        <ul>
+            <li><a href="index.html">Start</a></li>
+            <li><a href="pictures.html">Bilder</a></li>
+            <li class="activelink"><a href="about.html">Om</a></li>
 
-    </ul>
-</header>
-<main>
-    <section>
-        <h1 id="starttitle">Om</h1>
-        <p>Hur jag har skapat denna webbplats</p>
-    </section>
-</main>
-    
+        </ul>
+    </header>
+    <main>
+        <section id="info">
+            <h1 id="starttitle">Om</h1>
+            <h2>Hur jag har skapat denna webbplats</h2>
+            <p>För att lösa denna uppgift har jag följt läsanvisningarna på kursportalen. Jag har även deltagit på
+                föreläsningen den 20 januari 2025, samt sett den inspelade föreläsningen några gånger till för att lösa
+                denna uppgift. </p>
+
+            <h2>Arbetsprocessen</h2>
+            <p>npm init</p>
+            <p>Jag har använt Parcel för att bygga denna automatiserade webbplats. Alla arbetsfiler ligger i mappen src.
+                Mappen src innehåller i sin tur mapparna js, images och css. <br> Det finns en bra struktur i
+                utvecklingsmiljön.
+                Jag använder som tidigare i kursen Visual Studio Code i utvecklingsarbetet.</p>
+
+            <p>Jag började med att skapa en "Brolierkopia", som det tipsas om i uppgiftsbeskrivningen. Jag använde sedan
+                den broilerkopian för att bygga webbplatsen.</p>
+            <p>Installationen av Parcel skedde med --save-dev flaggan.</p>
+            <p>För att lägga in bilder har jag använt exemplena från undervisnings&shy;materialet.<br>
+                Exempelkod från pictures.html:
+                <code>&lt;picture&gt;<br>
+                <span class="indent">&lt;source srcset="images/winter20241121.jpg?as=avif&width=800" type="image/avif" /&gt;</span><br>
+                <span class="indent">&lt;source srcset="images/winter20241121.jpg?as=webp&width=800" type="image/webp" /&gt;</span><br>
+                <span class="indent">&lt;img src="images/winter20241121.jpg" alt="Mycket snö i november 2024"&gt;</span><br>
+                &lt;/picture&gt;<br></code>
+            </p>
+            <h2>Anpassningar</h2>
+            <p>Bildernas är anpassade i <cite>sharp.config.json</cite>
+                <code>{<br>
+                        <span class="indent">"jpeg": {</span><br>
+                            <span class="indent"><span class="indent">"quality": 60,</span></span><br>
+                            <span class="indent"><span class="indent">"chromasubsampling": "4:4:4"</span></span><br>
+                        <span class="indent">},</span><br>
+                        <span class="indent">"webp": {</span><br>
+                            <span class="indent">
+                                <span class="indent">
+                                    "nearlossless": false,
+                                </span>
+                            </span><br>
+                            <span class="indent">
+                                <span class="indent">
+                                "quality": 75
+                            </span>
+                        </span>     
+                            <br>
+                            <span class="indent">},</span><br>
+                        <span class="indent">"avif": {<br></span>
+                            <span class="indent"><span class="indent">"quality": 60</span></span><br> 
+                        <span class="indent">}</span><br>
+                    }<br>
+                </code>
+            </p>
+            <p>Dessa anpassingar är inte veten&shy;skapligt framtagna. I processen för att hitta rätt inställ&shy;ningar
+                experi&shy;menterade jag lite med olika kvalitéer <cite>("quality")</cite> på de olika formaten för att ta
+                reda på hur det påverkade bildernas utseende och storlek på disk.</p>
+            <p>Jag lärde mig att avif har <cite>"quality": 50</cite> som standard. Jag lärde mig också att
+                <cite>"quality": 100</cite> på avif resulterar i en fil som är 10 gånger större än för
+                standard&shy;inställningen (50). I alla fall med de filer/&shy;bilder som jag visar på webbplatsen.
+            </p>Jag tycker att min valda kvalitét på 60 för avif resulterade i bättre
+            bildkvalitét, med endast margi&shy;nellt stärre fil än för den standard&shy;komprimering Parcel har.
+            <h2>Problem</h2>
+            <p>Tyvärr har jag haft stora problem med att förhindra servern som körs via Parcel att krascha. </p>
+            <p>Hittills är det nästan det som tagit mest tid, att felsöka och starta om Parcel.</p>
+        </section>
+    </main>
+    <footer>
+        <h2>Mall - Frontend</h2>
+    </footer>
+
 </body>
+
 </html>

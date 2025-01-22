@@ -11,6 +11,7 @@ html,
 body {
     height: 100%;
     margin: 0;
+    font-size: 1.2rem;
 }
 
 
@@ -55,6 +56,19 @@ header ul li {
     margin: 0;
     /* display: inline-block; */
 }
+header ul li:active{
+    background-color: rgba(128, 202, 202, 0.632);
+}
+
+.activelink{
+    background-color: rgba(128, 220, 220, 0.715);
+}
+.activelink a {
+    /* color: rgb(82, 78, 78); */
+    /* font-style: italic; */
+    font-weight: 500;
+    letter-spacing: .15rem;
+}
 
 ul li a {
     font-size: 2rem;
@@ -75,15 +89,38 @@ main {
 }
 
 p {
-    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    letter-spacing: .05rem;
 }
 
+h2,
+h3{
+    margin: 1rem 0 .15rem 0; 
+}
 #starttitle {
     text-align: center;
     font-size: 2.5rem;
     margin: 1rem auto .5rem; 
 }
 
+/* index-html*/
+#info {
+    border: 1px gray solid;
+    width: 80%;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 1rem ;
+    /* padding-left: 10rem; */
+    background-color: rgba(255, 255, 255, 0.402);
+    box-shadow: 10px 5px 25px rgba(37, 34, 34, 0.441);
+}
+#info ul{
+    margin-left: 1.5em;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+}
 .imageholder {
     text-align: center;
     max-width: 100%;
@@ -93,7 +130,24 @@ p {
     max-width: 100%;
 }
 
+code{
+    background-color: rgba(255, 255, 255, 0.317);
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 2rem;
+    font-size: 1rem;
+    letter-spacing: .25rem;
+    border-radius: 10px;
+    padding: .5rem;
+}
+cite{
+    font-style: italic;
+    font-weight: bold;
+}
 
+.indent{
+    margin-left: 1.3rem;  
+}
 footer {
     background-color: rgb(105, 180, 180);
     flex-direction: row;
