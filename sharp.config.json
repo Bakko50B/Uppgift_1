@@ -8,6 +8,6 @@
         "quality": 75
     },
     "avif": {
-        "quality": 60 //Standard är 50
+        "quality": 60 
     }
 }
