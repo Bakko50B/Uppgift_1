@@ -18,7 +18,7 @@ body {
 body {
     font-family: "Roboto", serif;
     display: flex;
-    background-color: blueviolet;
+    background-color: rgb(86, 23, 145);
     flex-direction: column;
 }
 
@@ -150,7 +150,7 @@ cite{
 }
 footer {
     background-color: rgb(105, 180, 180);
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -158,8 +158,11 @@ footer {
     height: 4em;
     margin: 0 auto;
     display: flex;
-    padding: 2rem 1rem;
-    
+    padding: 2rem 1rem;    
+}
+
+#date{
+    display: block;
 }
 
 
@@ -185,4 +188,13 @@ footer {
     main {
         padding: .5rem;
     }
+
+    #info{
+        width: 96%;
+    }
+    code {
+        /* white-space: pre-wrap;  */
+        word-wrap: break-word; 
+        /* overflow-wrap: break-word;  */
+      }
 }
