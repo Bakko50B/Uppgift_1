@@ -52,12 +52,12 @@
                 att skapa ett repository på Github via koppling från VSC.
                 Redan innan publicering på Netlify valde jag att använda olika branches på versions&shy;hanteringen.
                 Detta
-                mest för att testa hur man gör. Hade innan denna uppgift aldrig gjort det i "skarpt läge". Eegntligen
+                mest för att testa hur man gör. Hade innan denna uppgift aldrig gjort det i "skarpt läge". Egentligen
                 kunde den delen skippats då jag inte hade planer på att lägga ut något innan webbplatsen var klar. Om ni
-                kan läsa detta betyder det att jag lyckats "merga samman" de olika olika grenarna/&shy;branches i
-                projektet.
-                Borde inte medför så stora problem. När jag lagt samman grenarna till main i git så kommer publicering
-                ske. Jag har använt Netlify tidigare, dock inte med de inställningar som behövs för att publicera en
+                kan läsa detta betyder det att jag lyckats "merga samman" de olika grenarna/&shy;branches i
+                projektet.<br>
+                När jag lagt samman grenarna till main i git så kommer publicering ske. 
+                Jag har använt Netlify tidigare, dock inte med de inställningar som behövs för att publicera en
                 Parcelbyggd webbplats.
             </p>
             <h2>Bilder</h2>
@@ -71,7 +71,7 @@
                 &lt;/picture&gt;<br></code>
             </p>
             <p>Bilderna har jag fotat, och redigerat i PhotoShop. Samtliga bilder sparades i jpeg-formatet med den
-                längsta sidans mått på 1200px. Den bredden (alla bilder är landskapsorieneterade) ville jag ha
+                längsta sidans mått på 1200px. Den bredden (alla bilder är landskapsorienterade) ville jag ha
                 för att via Parcel testa att använda inställningen av bredd. Se koden ovan.</p>
             <h2>Anpassningar</h2>
             <h3>Bilder</h3>
@@ -128,8 +128,8 @@
                 som inte finns i /dist-katalogen. Eftersom det (självklart) inte går kraschar servern/Parcel. Som jag
                 tolkar resultatet av googlingen är jag långt ifrån ensam om detta problem.</p>
 
-            <p>Jag hittade lite förslag på problemet vid sökningen. Jag rekommen&shy;derades att installera någon typ av
-                skärpborttagare i form av plugin i npm. Samtliga tillägg som jag tittade på verkade har samma funktion,
+            <p>Jag hittade lite förslag på lösning av problemet vid sökningen. Jag rekommen&shy;derades att installera någon typ av
+                skräpborttagare i form av plugin. Samtliga tillägg som jag tittade på verkade har samma funktion,
                 att rensa i dist&shy;katalogen innan det skapades nya filer.</p>
             <p>Först testade jag ett tillägg som heter "fs-extra".
                 Det fungerade ett tag men löste inte problemet. Efter några minuter återkom problemet. Jag installerade
@@ -141,9 +141,8 @@
                 den
                 automatiska uppdateringen.</P>
             <p>Jag lade till den flaggan i start&shy;scriptet och sedan dess flyter allt på bra. Det enda problemet är
-                att
-                när jag vill titta på resultat på sidan så behöver jag uppdatera webbläsaren.<br>
-                Den lösningen är lätt att ta i förhållande till att behöva starta om Parcel via "npm run start" ett otal
+                att när jag vill titta på resultat så behöver jag uppdatera webbläsaren.<br>
+                Den problemet är lätt att ta i förhållande till att behöva starta om Parcel via "npm run start" ett otal
                 gånger.
             </p>
             <p>Nu är min rutin med arbetet att växla fönster till webbläsaren med hjälp av "alt+tab" och därefter
@@ -161,6 +160,8 @@
             <p>För den som tar ner mitt repo från github är det viktigt att ändra i "start" under "script" i package.json.
                 För att kunna använda servern med automatisk uppdatering behöver flaggan tas bort.</p>
                 <p>Det fungerar annars alldeles utmärkt att uppdatera webbläsaren manuellt!</p>
+            <h3>JavaSript</h3>
+            pDet ligger en enkel JavaScriptfunktion i footern. Dagens datum!
 
 
         </section>
