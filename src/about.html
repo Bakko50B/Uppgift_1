@@ -23,21 +23,46 @@
         <section id="info">
             <h1 id="starttitle">Om</h1>
             <h2>Hur jag har skapat denna webbplats</h2>
-            <p>För att lösa denna uppgift har jag följt läsanvisningarna på kursportalen. Jag har även deltagit på
-                föreläsningen den 20 januari 2025, samt sett den inspelade föreläsningen några gånger till för att lösa
-                denna uppgift. </p>
+            <p>
+                För att lösa denna uppgift har jag följt läsanvisningarna på kursportalen. Jag har även deltagit på
+                föreläsningen den 20 januari 2025, samt sett den inspelade föreläsningen några
+                gånger till för att lösa denna uppgift.
+            </p>
+            <p>
+                Det finns även en kortare video på kursportalen som jag tittat på inför genom&shy;förandet av denn
+                uppgift.
+            </p>
 
             <h2>Arbetsprocessen</h2>
-            <p>npm init</p>
-            <p>Jag har använt Parcel för att bygga denna automatiserade webbplats. Alla arbetsfiler ligger i mappen src.
-                Mappen src innehåller i sin tur mapparna js, images och css. <br> Det finns en bra struktur i
-                utvecklingsmiljön.
-                Jag använder som tidigare i kursen Visual Studio Code i utvecklingsarbetet.</p>
 
-            <p>Jag började med att skapa en "Brolierkopia", som det tipsas om i uppgiftsbeskrivningen. Jag använde sedan
-                den broilerkopian för att bygga webbplatsen.</p>
-            <p>Installationen av Parcel skedde med --save-dev flaggan.</p>
-            <p>För att lägga in bilder har jag använt exemplena från undervisnings&shy;materialet.<br>
+            <p>Jag har använt Parcel för att bygga denna automatiserade webbplats. <br>
+                Som start började jag med <code>npm init</code> för att kunna skapa en Parcelbyggd webbplats. Sedan
+                följde installationen av Parcel.
+                Installationen av Parcel skedde med --save-dev flaggan.</p>
+            <p>Alla arbetsfiler ligger i mappen src.
+                Mappen src innehåller i sin tur mapparna js, images och css. <br>
+                Det finns en bra struktur i utvecklingsmiljön.
+                Jag använder som tidigare i kursen Visual Studio Code i utvecklings&shy;arbetet.</p>
+
+            <p>Jag hade redan skapat en "Brolierkopia", som det tipsas om i uppgifts&shy;beskrivningen. Jag använde den
+                broilerkopian för att bygga webbplatsen.</p>
+
+            <h2>Git</h2>
+            <p>Redan vid start av byggandet av webbplasten fanns planen att publicera resultatet på Netlify. Jag valde
+                att skapa ett repository på Github via koppling från VSC.
+                Redan innan publicering på Netlify valde jag att använda olika branches på versions&shy;hanteringen.
+                Detta
+                mest för att testa hur man gör. Hade innan denna uppgift aldrig gjort det i "skarpt läge". Eegntligen
+                kunde den delen skippats då jag inte hade planer på att lägga ut något innan webbplatsen var klar. Om ni
+                kan läsa detta betyder det att jag lyckats "merga samman" de olika olika grenarna/&shy;branches i
+                projektet.
+                Borde inte medför så stora problem. När jag lagt samman grenarna till main i git så kommer publicering
+                ske. Jag har använt Netlify tidigare, dock inte med de inställningar som behövs för att publicera en
+                Parcelbyggd webbplats.
+            </p>
+            <h2>Bilder</h2>
+            <p>För att lägga in bilder har jag använt exemplena från undervisnings&shy;materialet. Självklart med
+                relevanta namn på filerna.<br>
                 Exempelkod från pictures.html:
                 <code>&lt;picture&gt;<br>
                     <span class="indent">&lt;source srcset="images/winter20241121.jpg?as=avif&width=800" type="image/avif" /&gt;</span><br>
@@ -45,7 +70,11 @@
                     <span class="indent">&lt;img src="images/winter20241121.jpg" alt="Mycket snö i november 2024"&gt;</span><br>
                 &lt;/picture&gt;<br></code>
             </p>
+            <p>Bilderna har jag fotat, och redigerat i PhotoShop. Samtliga bilder sparades i jpeg-formatet med den
+                längsta sidans mått på 1200px. Den bredden (alla bilder är landskapsorieneterade) ville jag ha
+                för att via Parcel testa att använda inställningen av bredd. Se koden ovan.</p>
             <h2>Anpassningar</h2>
+            <h3>Bilder</h3>
             <p>Bildernas är anpassade i <cite>sharp.config.json</cite>
                 <code>{<br>
                         <span class="indent">"jpeg": {</span><br>
@@ -72,16 +101,68 @@
                 </code>
             </p>
             <p>Dessa anpassingar är inte veten&shy;skapligt framtagna. I processen för att hitta rätt inställ&shy;ningar
-                experi&shy;menterade jag lite med olika kvalitéer <cite>("quality")</cite> på de olika formaten för att ta
+                experi&shy;menterade jag lite med olika kvalitéer <cite>("quality")</cite> på de olika formaten för att
+                ta
                 reda på hur det påverkade bildernas utseende och storlek på disk.</p>
             <p>Jag lärde mig att avif har <cite>"quality": 50</cite> som standard. Jag lärde mig också att
                 <cite>"quality": 100</cite> på avif resulterar i en fil som är 10 gånger större än för
                 standard&shy;inställningen (50). I alla fall med de filer/&shy;bilder som jag visar på webbplatsen.
             </p>Jag tycker att min valda kvalitét på 60 för avif resulterade i bättre
             bildkvalitét, med endast margi&shy;nellt stärre fil än för den standard&shy;komprimering Parcel har.
+            <h3>Webbläsare</h3>
+            <p>Parcel har en konfigurationsmöjlighet för stödet av vilka webbläsare som webbsidorna ska stödj. Jag har
+                ingen
+                avancerad kod i mitt projekt, men ville trots det använda mig av möjligheten att styra stödet för just
+                prioriterade
+                webbläsare. Troligen kommer sidan att visas korrekt även på webbläsare som faller utanför
+                konfigurationsfilens regler.</p>
+            <p>Denna rad lade jag till i <cite>package.json</cite>:</p>
+            <code><span class="indent">"browserslist": "> 1%, last 2 versions, not dead"</span></code>
+            <p>Om jag tolkat dokumentationen rätt så betyder det: <br>
+                Stöd för webbläsare som används av mer än 1% av globala användare.<br>
+                Stöd för de två senaste versionerna av varje webbläsare. <br>
+                Uteslutande av webbläsare som inte längre får uppdateringar.</p>
             <h2>Problem</h2>
-            <p>Tyvärr har jag haft stora problem med att förhindra servern som körs via Parcel att krascha. </p>
-            <p>Hittills är det nästan det som tagit mest tid, att felsöka och starta om Parcel.</p>
+            <p>Parcel kraschar hela tiden!</p>
+            <p>Enligt felmeddelandet försöker Parcel ta bort en (temporär) fil
+                som inte finns i /dist-katalogen. Eftersom det (självklart) inte går kraschar servern/Parcel. Som jag
+                tolkar resultatet av googlingen är jag långt ifrån ensam om detta problem.</p>
+
+            <p>Jag hittade lite förslag på problemet vid sökningen. Jag rekommen&shy;derades att installera någon typ av
+                skärpborttagare i form av plugin i npm. Samtliga tillägg som jag tittade på verkade har samma funktion,
+                att rensa i dist&shy;katalogen innan det skapades nya filer.</p>
+            <p>Först testade jag ett tillägg som heter "fs-extra".
+                Det fungerade ett tag men löste inte problemet. Efter några minuter återkom problemet. Jag installerade
+                då "rimraf" som har samma funktion.</p>
+            <p>Inte heller det var lösningen på mitt problem.</p>
+            <P>Efter ytterligare googlingar så fick jag ett tips på att inaktivera den inbyggda automatiska
+                uppdateringen av sidan som sker vid kodändring. Det var alltid i samband med att jag skrev kod som
+                Parcel kraschade. Det finns en flagga att sätta på start&shy;kommandot som innebär att man inaktiverar
+                den
+                automatiska uppdateringen.</P>
+            <p>Jag lade till den flaggan i start&shy;scriptet och sedan dess flyter allt på bra. Det enda problemet är
+                att
+                när jag vill titta på resultat på sidan så behöver jag uppdatera webbläsaren.<br>
+                Den lösningen är lätt att ta i förhållande till att behöva starta om Parcel via "npm run start" ett otal
+                gånger.
+            </p>
+            <p>Nu är min rutin med arbetet att växla fönster till webbläsaren med hjälp av "alt+tab" och därefter
+                "ctrl+F5" för att ladda in sidan igen. Det fungerar perfekt. </p>
+            I <cite>package.json</cite> finns det nu följande:
+            <code>
+                    "scripts": {<br><span class="indent">"clean": "npx rimraf dist",</span><br>
+                    <span class="indent">"build": "npm run clean && parcel build src/index.html",</span><br>
+                    <span class="indent">"start": "npm run clean && parcel serve src/index.html --no-hmr"</span><br>
+                },
+            </code>
+            <p>Det är --no-hmr som säger att Parcel ska startas utan automatisk uppdatering av sidan.<br>
+                Jag har även lagt in ett script "clean" som körs vid build och start. Dist-katalogen rensas.</p>
+            <h3>Viktigt</h3>
+            <p>För den som tar ner mitt repo från github är det viktigt att ändra i "start" under "script" i package.json.
+                För att kunna använda servern med automatisk uppdatering behöver flaggan tas bort.</p>
+                <p>Det fungerar annars alldeles utmärkt att uppdatera webbläsaren manuellt!</p>
+
+
         </section>
     </main>
     <footer>
