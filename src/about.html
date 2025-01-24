@@ -29,33 +29,31 @@
                 gånger till för att lösa denna uppgift.
             </p>
             <p>
-                Det finns även en kortare video på kursportalen som jag tittat på inför genom&shy;förandet av denn
+                Det finns även en kortare video på kursportalen som jag tittat på inför genom&shy;förandet av denna
                 uppgift.
             </p>
 
             <h2>Arbetsprocessen</h2>
 
-            <p>Jag har använt Parcel för att bygga denna automatiserade webbplats. <br>
+            <p>Jag har använt Parcel för att bygga den automatiserade webbplatsen. <br>
                 Som start började jag med <code>npm init</code> för att kunna skapa en Parcelbyggd webbplats. Sedan
                 följde installationen av Parcel.
                 Installationen av Parcel skedde med --save-dev flaggan.</p>
             <p>Alla arbetsfiler ligger i mappen src.
                 Mappen src innehåller i sin tur mapparna js, images och css. <br>
                 Det finns en bra struktur i utvecklingsmiljön.
-                Jag använder som tidigare i kursen Visual Studio Code i utvecklings&shy;arbetet.</p>
+                Jag använder Visual Studio Code i utvecklings&shy;arbetet.</p>
 
             <p>Jag hade redan skapat en "Brolierkopia", som det tipsas om i uppgifts&shy;beskrivningen. Jag använde den
                 broilerkopian för att bygga webbplatsen.</p>
 
             <h2>Git</h2>
-            <p>Redan vid start av byggandet av webbplasten fanns planen att publicera resultatet på Netlify. Jag valde
-                att skapa ett repository på Github via koppling från VSC.
+            <p>Redan vid start av byggandet av webbplatsen fanns planen att publicera resultatet på Netlify. Jag valde
+                att skapa ett repository på Github via VSC.
                 Redan innan publicering på Netlify valde jag att använda olika branches på versions&shy;hanteringen.
-                Detta
-                mest för att testa hur man gör. Hade innan denna uppgift aldrig gjort det i "skarpt läge". Egentligen
+                Detta mest för att testa hur man gör. Innan denna uppgift hade jag aldrig gjort det i "skarpt läge". Egentligen
                 kunde den delen skippats då jag inte hade planer på att lägga ut något innan webbplatsen var klar. Om ni
-                kan läsa detta betyder det att jag lyckats "merga samman" de olika grenarna/&shy;branches i
-                projektet.<br>
+                kan läsa detta betyder det att jag lyckats "merga samman" de olika grenarna/&shy;branches i projektet.<br>
                 När jag lagt samman grenarna till main i git så kommer publicering ske. 
                 Jag har använt Netlify tidigare, dock inte med de inställningar som behövs för att publicera en
                 Parcelbyggd webbplats.
@@ -63,7 +61,7 @@
             <h2>Bilder</h2>
             <p>För att lägga in bilder har jag använt exemplena från undervisnings&shy;materialet. Självklart med
                 relevanta namn på filerna.<br>
-                Exempelkod från pictures.html:
+                Kod från pictures.html:
                 <code>&lt;picture&gt;<br>
                     <span class="indent">&lt;source srcset="images/winter20241121.jpg?as=avif&width=800" type="image/avif" /&gt;</span><br>
                     <span class="indent">&lt;source srcset="images/winter20241121.jpg?as=webp&width=800" type="image/webp" /&gt;</span><br>
@@ -110,11 +108,9 @@
             </p>Jag tycker att min valda kvalitét på 60 för avif resulterade i bättre
             bildkvalitét, med endast margi&shy;nellt stärre fil än för den standard&shy;komprimering Parcel har.
             <h3>Webbläsare</h3>
-            <p>Parcel har en konfigurationsmöjlighet för stödet av vilka webbläsare som webbsidorna ska stödj. Jag har
-                ingen
-                avancerad kod i mitt projekt, men ville trots det använda mig av möjligheten att styra stödet för just
-                prioriterade
-                webbläsare. Troligen kommer sidan att visas korrekt även på webbläsare som faller utanför
+            <p>Parcel har en konfigurationsmöjlighet för stödet av vilka webbläsare som webbsidorna ska stödja. Jag har
+                ingen avancerad kod i mitt projekt, men ville trots det använda mig av möjligheten att styra stödet till 
+                prioriterade webbläsare. Troligen kommer sidan att visas korrekt även på webbläsare som faller utanför
                 konfigurationsfilens regler.</p>
             <p>Denna rad lade jag till i <cite>package.json</cite>:</p>
             <code><span class="indent">"browserslist": "> 1%, last 2 versions, not dead"</span></code>
@@ -124,12 +120,11 @@
                 Uteslutande av webbläsare som inte längre får uppdateringar.</p>
             <h2>Problem</h2>
             <p>Parcel kraschar hela tiden!</p>
-            <p>Enligt felmeddelandet försöker Parcel ta bort en (temporär) fil
-                som inte finns i /dist-katalogen. Eftersom det (självklart) inte går kraschar servern/Parcel. Som jag
-                tolkar resultatet av googlingen är jag långt ifrån ensam om detta problem.</p>
+            <p>Enligt felmeddelandet försöker Parcel ta bort en (temporär) fil som inte finns i /dist-katalogen. 
+                Eftersom det (självklart) inte går kraschar servern/Parcel. Min tolkning av googlingen på problemet är att jag inte är ensam om detta problem.</p>
 
-            <p>Jag hittade lite förslag på lösning av problemet vid sökningen. Jag rekommen&shy;derades att installera någon typ av
-                skräpborttagare i form av plugin. Samtliga tillägg som jag tittade på verkade har samma funktion,
+            <p>Jag hittade lite förslag på lösning vid sökningen. Jag rekommen&shy;derades att installera någon typ av
+                skräpborttagare i form av plugin. Samtliga tillägg som jag tittade på verkar har samma funktion,
                 att rensa i dist&shy;katalogen innan det skapades nya filer.</p>
             <p>Först testade jag ett tillägg som heter "fs-extra".
                 Det fungerade ett tag men löste inte problemet. Efter några minuter återkom problemet. Jag installerade
@@ -138,8 +133,7 @@
             <P>Efter ytterligare googlingar så fick jag ett tips på att inaktivera den inbyggda automatiska
                 uppdateringen av sidan som sker vid kodändring. Det var alltid i samband med att jag skrev kod som
                 Parcel kraschade. Det finns en flagga att sätta på start&shy;kommandot som innebär att man inaktiverar
-                den
-                automatiska uppdateringen.</P>
+                den automatiska uppdateringen.</P>
             <p>Jag lade till den flaggan i start&shy;scriptet och sedan dess flyter allt på bra. Det enda problemet är
                 att när jag vill titta på resultat så behöver jag uppdatera webbläsaren.<br>
                 Den problemet är lätt att ta i förhållande till att behöva starta om Parcel via "npm run start" ett otal
